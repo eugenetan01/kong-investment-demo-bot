@@ -34,7 +34,7 @@ Override with `secrets.toml` file:
 
 Web app Deployed to streamlit using Eugene's own github. Check with him for more details.
 
-PII service deployed to EC2. Check with Eugene for more.
+PII service deployed to GCP cloud run. Check with Eugene for more.
 
 ## Structure
 
