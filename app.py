@@ -76,7 +76,7 @@ if submitted:
         with st.expander("Preview request (cURL)"):
             st.code(curl_preview, language="bash")
         resp = None
-        
+
         # Send request
         try:
             with st.spinner("Fetching your investment advice..."):
@@ -100,5 +100,5 @@ if submitted:
         except requests.RequestException as e:
             st.error(f"Request failed: {e}")
 
-        with st.expander("Your selections"):
-            st.write({k: v for k, v in selections.items()})
+        # with st.expander("Your selections"):
+        #    st.write({k: v for k, v in selections.items()})
