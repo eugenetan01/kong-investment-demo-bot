@@ -76,9 +76,12 @@ if submitted:
         with st.expander("Preview request (cURL)"):
             st.code(curl_preview, language="bash")
         resp = None
+        
         # Send request
         try:
-            resp = requests.post(ENDPOINT_URL, headers=headers, json=payload, timeout=30)
+            with st.spinner("Fetching your investment advice..."):
+                resp = requests.post(ENDPOINT_URL, headers=headers, json=payload, timeout=30)
+
             display = st.success if resp.ok else st.error
             display(f"Request sent. Status: {resp.status_code}")
 
