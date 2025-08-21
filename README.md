@@ -21,17 +21,15 @@ streamlit run app.py
 
 ## Configure Runtime
 
-Override with env vars:
+Override with `secrets.toml` file:
 
-- `ENDPOINT_URL` (default: `https://cb7d23d466.gateways.konggateway.com/chatbot`)
-- `MESSAGES_TEMPLATE` (default: `{template://invest-template}`)
+- `ENDPOINT_URL`
+- `MESSAGES_TEMPLATE`
+- `APIKEY`
 
-## Cloud Run
+## Deployment
 
-```bash
-gcloud builds submit --tag gcr.io/$(gcloud config get-value project)/kong-invest-spa
-gcloud run deploy kong-invest-spa   --image gcr.io/$(gcloud config get-value project)/kong-invest-spa   --region asia-southeast1   --platform managed   --allow-unauthenticated   --port 8080   --set-env-vars ENDPOINT_URL="https://cb7d23d466.gateways.konggateway.com/chatbot",MESSAGES_TEMPLATE="{template://invest-template}"
-```
+Deployed to streamlit using Eugene's own github. Check with him for more details.
 
 ## Structure
 
