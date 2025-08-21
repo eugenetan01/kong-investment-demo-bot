@@ -10,7 +10,6 @@ keeps question/answer data in a separate `questions.json`, and posts the selecti
 - Question spec in JSON (`questions.json`) with short, professional labels and points
 - POST to a configurable endpoint
 - cURL preview and response viewer
-- Dockerfile for Cloud Run
 
 ## Local Run
 

@@ -1,13 +1,15 @@
 
 import os
+
 import json
 import requests
 import streamlit as st
 
-# --- Settings (override via env vars) ---
-ENDPOINT_URL = os.getenv("ENDPOINT_URL", "https://cb7d23d466.gateways.konggateway.com/chatbot")
-MESSAGES_TEMPLATE = os.getenv("MESSAGES_TEMPLATE", "{template://invest-template}")
 
+# --- Settings (override via env vars) ---
+ENDPOINT_URL = st.secrets["ENDPOINT_URL"]
+MESSAGES_TEMPLATE = st.secrets["MESSAGES_TEMPLATE"]
+APIKEY = st.secrets["API_KEY"]
 
 # --- Load quiz spec ---
 with open("questions.json", "r", encoding="utf-8") as f:
@@ -63,7 +65,8 @@ if submitted:
 
         # Headers
         headers = {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "apikey": APIKEY
         }
 
 
