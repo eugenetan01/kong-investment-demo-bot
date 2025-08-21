@@ -9,7 +9,10 @@ keeps question/answer data in a separate `questions.json`, and posts the selecti
 - Name + 5 questions (one answer each)
 - Question spec in JSON (`questions.json`) with short, professional labels and points
 - POST to a configurable endpoint
+- Templatise inputs into a prompt for LLM to formulate an investment report
 - cURL preview and response viewer
+- PII sanitizer to remove name and return synthetic name -> prevent attacker from catching on
+- Semantic prompt guard to block any inputs related to illegal activities
 
 ## Local Run
 
@@ -29,7 +32,9 @@ Override with `secrets.toml` file:
 
 ## Deployment
 
-Deployed to streamlit using Eugene's own github. Check with him for more details.
+Web app Deployed to streamlit using Eugene's own github. Check with him for more details.
+
+PII service deployed to EC2. Check with Eugene for more.
 
 ## Structure
 
